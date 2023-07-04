@@ -1,20 +1,35 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { React, useState } from "react";
+import { StyleSheet, View, Text } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import Tabs from "./src/components/Tabs";
+import Login from "./src/screens/Login";
+import MyComponent from "./src/components/MyComponent";
+import CreateAccount from "./src/components/CreateAccount";
+import DropDownSelector from "./src/components/DropDownSelector";
+import ComplaintAssign from "./src/components/ComplaintAssign/ComplaintAssign";
+import Home from "./src/screens/Assistant/Home";
+import AssistantScreen from "./src/screens/Assistant/AssistantScreen";
+import Filter from "./src/screens/Assistant/Filter";
+("./src/screens/Assistant/AssistantScreen");
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+  // const [loggedin, setLoggedIn] = useState(false);
+  // if (loggedin) {
+  //   return <NavigatorComponent />;
+  // }
+  // return <Login setLoggedIn={setLoggedIn} />;
+  // return <ComplaintAssign complaintIds={["#123", "#345"]} />;
+  // return <Home />;
+  // return <AssistantScreen />;
+  // return <Filter />;
+  return <CreateAccount />;
+  // return <DropDownSelector />;
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const NavigatorComponent = () => {
+  return (
+    <NavigationContainer>
+      <Tabs />
+    </NavigationContainer>
+  );
+};
